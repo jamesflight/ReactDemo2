@@ -1,0 +1,9 @@
+{
+  "globalDependencies": {
+    "redux": "registry:dt/redux#3.5.2+20160703092728",
+    "rx": "registry:dt/rx#4.1.0+20170103235349"
+  },
+  "dependencies": {
+    "ramda": "registry:dt/ramda#0.0.0+20170322181526"
+  }
+}

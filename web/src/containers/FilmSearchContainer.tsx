@@ -4,7 +4,7 @@ import { connect, Dispatch } from 'react-redux'
 import { YearDropdown } from "../components/YearDropdown";
 import { SearchBox } from "../components/SearchBox";
 import { FilmList } from "../components/FilmList";
-import { RootState } from "../reducers/FilmSearchReducer";
+import { RootState } from "../../../src/reducers/FilmSearchReducer";
 
 interface IFilmSearchContainerProps {
     selectedYear: string,

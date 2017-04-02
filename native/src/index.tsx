@@ -1,4 +1,9 @@
-import * as React from "react";
+import React, { Component } from 'react';
+import {
+    StyleSheet,
+    Text,
+    View
+} from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
@@ -7,17 +12,11 @@ import "rxjs";
 
 import { FilmSearchReducer } from "./../../src/reducers/FilmSearchReducer";
 import {testEpic} from "./../../src/actions/SearchEpic";
+import FilmSearchContianer from "./containers/FilmSearchContainer";
 
 const rootEpic = combineEpics(testEpic);
 const epicMiddleware = createEpicMiddleware(rootEpic);
 const store = createStore(FilmSearchReducer, applyMiddleware(epicMiddleware));
-
-import {
-    StyleSheet,
-    Text,
-    View
-} from 'react-native';
-import { Provider } from 'react-redux';
 
 interface Props {
 
@@ -32,9 +31,7 @@ export default class App extends Component<Props, State> {
         return (
             <Provider store={store}>
                 <View>
-                    <Text>
-                        Welcome to React Native!
-                    </Text>
+                    <FilmSearchContianer/>
                 </View>
             </Provider>
         );

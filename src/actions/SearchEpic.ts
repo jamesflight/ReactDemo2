@@ -1,4 +1,4 @@
-import { Observable } from "rxjs";
+import "rxjs";
 import { Action } from "redux";
 import * as R from "ramda";
 import "rxjs/add/operator/filter";
@@ -6,7 +6,7 @@ import "rxjs/add/operator/map";
 import "rxjs/add/operator/debounceTime";
 import "rxjs/add/operator/mergeMap";
 
-export function testEpic(action$: Observable<Action>, store: any): Observable<Action> {
+export var testEpic: any = (action$: any, store: any): any => {
     return action$
         .filter((action) => {
             return action.type === 'SELECT_YEAR' || action.type === 'TYPE_IN_SEARCH_BOX'

@@ -4,11 +4,12 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 import { combineEpics } from 'redux-observable';
+import "rxjs";
 
 
 import FilmSearchContainer from "./containers/FilmSearchContainer";
-import { FilmSearchReducer } from "./reducers/FilmSearchReducer";
-import {testEpic} from "./actions/SearchEpic";
+import { FilmSearchReducer } from "./../../src/reducers/FilmSearchReducer";
+import {testEpic} from "./../../src/actions/SearchEpic";
 
 const rootEpic = combineEpics(testEpic);
 const epicMiddleware = createEpicMiddleware(rootEpic);
